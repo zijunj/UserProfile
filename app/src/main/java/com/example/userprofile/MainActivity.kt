@@ -8,7 +8,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Snackbar
@@ -44,17 +43,18 @@ fun UserProfileScreen() {
             .fillMaxSize()
             .background(Color(0xFFF5F5F5))
             .padding(16.dp),
+        verticalArrangement = Arrangement.Center, // Centers the content vertically
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Card(
             modifier = Modifier
-                .fillMaxWidth()
+                .fillMaxWidth(1f)
                 .padding(16.dp),
             shape = RoundedCornerShape(16.dp),
-//            elevation = 4.dp
         ) {
             Column(
                 modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.Center, // Centers the content vertically
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 // Profile Image
@@ -63,7 +63,7 @@ fun UserProfileScreen() {
                     contentDescription = "Profile Picture",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
-                        .size(120.dp)
+                        .size(300.dp)
                         .clip(CircleShape)
                 )
 
@@ -71,8 +71,8 @@ fun UserProfileScreen() {
 
                 // Username
                 Text(
-                    text = "Jane Doe",
-                    fontSize = 22.sp,
+                    text = "Billy Brown",
+                    fontSize = 35.sp,
                     fontWeight = FontWeight.Bold
                 )
 
@@ -80,8 +80,8 @@ fun UserProfileScreen() {
 
                 // Bio
                 Text(
-                    text = "UI/UX Designer | Minimalist | Traveler",
-                    fontSize = 16.sp,
+                    text = "UI/UX Designer | Creative | Athlete ",
+                    fontSize = 18.sp,
                     color = Color.Gray
                 )
 
@@ -93,7 +93,7 @@ fun UserProfileScreen() {
                     shape = RoundedCornerShape(8.dp),
                     modifier = Modifier.fillMaxWidth(0.6f)
                 ) {
-                    Text(text = "Follow")
+                    Text(text = "Follow", fontSize = 18.sp)
                 }
             }
         }
